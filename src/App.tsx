@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, TouchEvent } from 'react';
 import { Navigation } from './components/Navigation';
 import { Home } from './components/Home';
 import { About } from './components/About';
@@ -12,6 +12,8 @@ import { Footer } from './components/Footer';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const sections = ['home', 'about', 'skills', 'projects', 'badges', 'contact'];
 
@@ -23,6 +25,36 @@ function App() {
   const getNextSection = () => {
     const currentIndex = getCurrentSectionIndex();
     return currentIndex < sections.length - 1 ? sections[currentIndex + 1] : null;
+  };
+
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const minSwipeDistance = 50;
+    const swipeDistance = touchStart - touchEnd;
+
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      // Left swipe
+      if (swipeDistance > 0) {
+        const nextSection = getNextSection();
+        if (nextSection) {
+          setActiveSection(nextSection);
+        }
+      }
+      // Right swipe
+      else {
+        const prevSection = getPrevSection();
+        if (prevSection) {
+          setActiveSection(prevSection);
+        }
+      }
+    }
   };
 
   useEffect(() => {
@@ -38,7 +70,12 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div 
+      className="min-h-screen bg-gray-50"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       
       <main className="pt-16 pb-20">
