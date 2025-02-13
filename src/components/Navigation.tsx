@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HomeIcon, User, Briefcase, Award, Mail, Code, Menu, X } from 'lucide-react';
+import { HomeIcon, User, Briefcase, Award, Mail, Code, Menu, X, GraduationCap } from 'lucide-react';
 
 interface NavigationProps {
   activeSection: string;
@@ -14,6 +14,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
     { id: 'about', icon: User, label: 'About' },
     { id: 'skills', icon: Code, label: 'Skills' },
     { id: 'projects', icon: Briefcase, label: 'Projects' },
+    { id: 'certifications', icon: GraduationCap, label: 'Certifications' },
     { id: 'badges', icon: Award, label: 'Badges' },
     { id: 'contact', icon: Mail, label: 'Contact' }
   ];

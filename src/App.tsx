@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Badges } from './components/Badges';
+import { Certifications } from './components/Certifications';
 import { Contact } from './components/Contact';
 import { Loading } from './components/Loading';
 import { Footer } from './components/Footer';
@@ -15,7 +16,7 @@ function App() {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  const sections = ['home', 'about', 'skills', 'projects', 'badges', 'contact'];
+  const sections = ['home', 'about', 'skills', 'projects', 'certifications', 'badges', 'contact'];
 
   const getCurrentSectionIndex = () => sections.indexOf(activeSection);
   const getPrevSection = () => {
@@ -90,6 +91,9 @@ function App() {
         </div>
         <div className={activeSection === 'projects' ? 'block' : 'hidden'}>
           <Projects />
+        </div>
+        <div className={activeSection === 'certifications' ? 'block' : 'hidden'}>
+          <Certifications />
         </div>
         <div className={activeSection === 'badges' ? 'block' : 'hidden'}>
           <Badges />
