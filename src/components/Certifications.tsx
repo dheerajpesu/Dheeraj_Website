@@ -1,18 +1,27 @@
-import React from 'react';
-import { Award, Calendar, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, Calendar, CheckCircle2, X } from 'lucide-react';
 
 const certifications = [
   {
     name: "Problem Solving (Intermediate) Certificate",
     issuer: "HackerRank",
-    date: "Feb 2025",
+    date: "25 March 2023",
     credentialId: "0d478ab577d8",
-    image: "https://hrcdn.net/fcore/assets/brand/hr-logo-new-black-green-2f615594d2.svg",
+    image: "/HackerRankCertificate.jpg",
     skills: ["Problem Solving", "Algorithms", "Data Structures"]
+  },
+  {
+    name: "C++ Practical - Organogram in C++",
+    issuer: "Infosys Springboard",
+    date: "13 Feb 2025",
+    image: "/Infosys_springBoard_Cpp.jpg",
+    skills: ["C++", "Object-Oriented Programming", "Data Structures"],
   }
 ];
 
 export function Certifications() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,9 +38,12 @@ export function Certifications() {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="md:flex">
-                <div className="md:flex-shrink-0 flex items-center justify-center p-6 bg-gradient-to-br from-indigo-50 to-white">
+                <div 
+                  className="md:flex-shrink-0 flex items-center justify-center p-6 bg-gradient-to-br from-indigo-50 to-white cursor-pointer"
+                  onClick={() => setSelectedImage(cert.image)}
+                >
                   <img
-                    className="h-32 w-32 object-contain"
+                    className="h-32 w-32 object-contain hover:scale-105 transition-transform duration-200"
                     src={cert.image}
                     alt={cert.name}
                   />
@@ -73,6 +85,28 @@ export function Certifications() {
           ))}
         </div>
       </div>
+
+      {/* Image Zoom Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl w-full">
+            <button
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Certificate"
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
