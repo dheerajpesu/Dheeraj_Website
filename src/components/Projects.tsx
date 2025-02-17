@@ -3,6 +3,12 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
+    title: "Skin Disease Detection",
+    description: "Developed a deep learning-based skin disease detection system using VGG16 and ResNet50 for classification.",
+    link: "https://github.com/DHEERAJMH/OnlineBookStoreApp",
+    image: "/skin_disease.webp"
+  },
+  {
     title: "Online Book Store",
     description: "MERN project to buy books online",
     link: "https://github.com/DHEERAJMH/OnlineBookStoreApp",
