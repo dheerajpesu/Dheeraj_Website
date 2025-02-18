@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Skin Disease Detection",
     description: "Developed a deep learning-based skin disease detection system using VGG16 and ResNet50 for classification.",
-    link: "https://github.com/DHEERAJMH/OnlineBookStoreApp",
+    link: "https://github.com/DHEERAJMH/skin-disease-project",
     image: "/skin_disease.webp"
   },
   {
