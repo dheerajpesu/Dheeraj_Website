@@ -23,6 +23,13 @@ const certifications = [
     date: "14 Feb 2025",
     image: "/infosys_springBoard_fundamentals.cpp.jpg",
     skills: ["C++", "Object-Oriented Programming", "Data Structures"],
+  },
+  {
+    name: "Git & GitHub: Introduction",
+    issuer: "Infosys Springboard",
+    date: "15 Feb 2025",
+    image: "/git_github_infosys_springboard.jpg",
+    skills: ["git", "github"],
   }
 ];
 
