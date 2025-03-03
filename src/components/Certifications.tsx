@@ -30,7 +30,14 @@ const certifications = [
     date: "15 Feb 2025",
     image: "/git_github_infosys_springboard.jpg",
     skills: ["git", "github"],
-  }
+  },
+  {
+    name: "Python Coder",
+    issuer: "Kaggle",
+    date: "15 April 2024",
+    image: "/Python_Coder.png",
+    skills: ["Python"],
+  },
 ];
 
 export function Certifications() {
