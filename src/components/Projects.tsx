@@ -17,7 +17,7 @@ const projects = [
   {
     title: "Blood Bank Management System",
     description: "A project to manage blood bank using SQL",
-    link: "https://github.com/DHEERAJMH/Blood-Bank-Management-System",
+    link: "https://github.com/DHEERAJMH/Blood-Bank-Management-System.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5C3fOZcP4qW5mZbZlSxrcWxtPRDlwEpdyQ&s"
   },
   {
