@@ -14,6 +14,7 @@ const leetCodeBadges = [
   { name: "LeetCode 2025 50 Badge", image: "https://assets.leetcode.com/static_assets/others/2550.gif" },
   { name: "Feb 2025 Badge", image: "https://assets.leetcode.com/static_assets/marketing/202502.gif" },
   { name: "Mar 2025 Badge", image: "https://assets.leetcode.com/static_assets/marketing/202503.gif" },
+  { name: "LeetCode 2025 100 Badge", image: "https://assets.leetcode.com/static_assets/others/25100.gif" },
 ];
 
 const HackerrankBadges = [
